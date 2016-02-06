@@ -119,15 +119,29 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <div class="content">
           <iron-pages attr-for-selected="data-route" selected="{{route}}">
             <section data-route="home">
-              <paper-material elevation="1">
-                <my-greeting></my-greeting>
-
-                <p class="subhead">You now have:</p>
-                <my-list></my-list>
-
-                <p>Looking for more Web App layouts? Check out our <a href="https://github.com/PolymerElements/app-layout-templates">layouts</a> collection. You can also <a href="http://polymerelements.github.io/app-layout-templates/">preview</a> them live.</p>
-              </paper-material>
-
+              
+           <style is="custom-style">
+              paper-card.white {
+                --paper-card-header-color: #fff;
+              }
+            </style>
+            <paper-card image="images/down-jacket.jpg" class="white" style="margin-bottom:8px;">
+              <div class="card-actions">
+                <paper-icon-button icon="favorite"></paper-icon-button>
+              </div>
+            </paper-card>
+           <paper-card image="images/sweater.jpg" class="white" style="margin-bottom:8px;">
+              <div class="card-actions">
+                <paper-icon-button icon="favorite"></paper-icon-button>
+              </div>
+            </paper-card>
+                <paper-card image="images/down-jacket.jpg" class="white" style="margin-bottom:8px;">
+              <div class="card-actions">
+                <paper-icon-button icon="favorite"></paper-icon-button>
+              </div>
+            </paper-card>
+            </div>
+            Different layout and conte
               <paper-material elevation="1">
                 <p>This is another card.</p>
               </paper-material>
