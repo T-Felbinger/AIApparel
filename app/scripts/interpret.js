@@ -4,7 +4,8 @@ function request() {
     xmlhttp.open("GET","http://127.0.0.1:8000/?Occasion=" + ($("paper-menu#occasion").prop("selected") + 1) + "&Temperature=3", true);
     xmlhttp.onreadystatechange=function(){
          if (xmlhttp.readyState==4 && xmlhttp.status==200){
-           console.log("Test1: " + xmlhttp.responseText)
+           console.log("response: " + xmlhttp.response);
+           console.log("responseText: " + xmlhttp.responseText);
            update(xmlhttp.responseText);
          }
    }
@@ -25,24 +26,34 @@ function refresh() {
 function update(responseText) {
     var outfit = JSON.parse(responseText);
     
-    $("#Outerwear #Subtype").html("outfit.1_Subtype");
-    $("#Outerwear #Color").html("outfit.1_Color");
-    $("#Outerwear #Pattern").html("outfit.1_Pattern");
+    if(outfit["1_Subtype"] == "No")
+        $("#Outerwear").css("display", "none");
+    else    
+        $("#Outerwear").css("display", "inline-block");
     
-    $("#Sweater #Subtype").html("outfit.2_Subtype");
-    $("#Sweater #Color").html("outfit.2_Color");
-    $("#Sweater #Pattern").html("outfit.2_Pattern");
+    if(outfit["2_Subtype"] == "No")
+        $("#Sweater").css("display", "none");
+    else    
+        $("#Sweater").css("display", "inline-block");
     
-    $("#Shirt #Subtype").html("outfit.3_Subtype");
-    $("#Shirt #Color").html("outfit.3_Color");
-    $("#Shirt #Pattern").html("outfit.3_Pattern");
+    $("#Outerwear #Subtype").html("Type: " + outfit["1_Subtype"]);
+    $("#Outerwear #Color").html("Color: " + outfit["1_Color"]);
+    $("#Outerwear #Pattern").html("Pattern: " + outfit["1_Pattern"]);
     
-    $("#Pants #Subtype").html("outfit.4_Subtype");
-    $("#Pants #Color").html("outfit.4_Color");
-    $("#Pants #Pattern").html("outfit.4_Pattern");
+    $("#Sweater #Subtype").html("Type: " + outfit["2_Subtype"]);
+    $("#Sweater #Color").html("Color: " + outfit["2_Color"]);
+    $("#Sweater #Pattern").html("Pattern: " + outfit["2_Pattern"]);
     
-    $("#Shoes #Subtype").html("outfit.5_Subtype");
-    $("#Shoes #Color").html("outfit.5_Color");
-    $("#Shoes #Pattern").html("outfit.5_Pattern");
+    $("#Shirt #Subtype").html("Type: " + outfit["3_Subtype"]);
+    $("#Shirt #Color").html("Color: " + outfit["3_Color"]);
+    $("#Shirt #Pattern").html("Pattern: " + outfit["3_Pattern"]);
+    
+    $("#Pants #Subtype").html("Type: " + outfit["4_Subtype"]);
+    $("#Pants #Color").html("Color: " + outfit["4_Color"]);
+    $("#Pants #Pattern").html("Pattern: " + outfit["4_Pattern"]);
+    
+    $("#Shoes #Subtype").html("Type: " + outfit["5_Subtype"]);
+    $("#Shoes #Color").html("Color: " + outfit["5_Color"]);
+    $("#Shoes #Pattern").html("Pattern: " + outfit["5_Pattern"]);
     
 };
