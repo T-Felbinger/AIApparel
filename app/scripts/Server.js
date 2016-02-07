@@ -44,7 +44,7 @@ var shirts = [
     {"Type": "Shirt", "Subtype": "Button Down", "Color": "Maroon", "Pattern": "No", "Occasion": "3", "Temperature": "2", "Body": "2"},
     {"Type": "Shirt", "Subtype": "Button Down", "Color": "White", "Pattern": "Flanel", "Occasion": "3", "Temperature": "2", "Body": "2"},
     {"Type": "Shirt", "Subtype": "Button Down", "Color": "Pink", "Pattern": "No", "Occasion": "3", "Temperature": "2", "Body": "2"},
-    {"Type": "Shirt", "Subtype": "Button Down", "Color": "Maroon", "Pattern": "No", "Occasion": "3", "Temperature": "2", "Body": "2"},
+    {"Type": "Shirt", "Subtype": "Button Down", "Color": "Maroon", "Pattern": "No", "Occasion": "3", "Temperature": "2", "Body": "2"}
 ];
 var outerwear = [
     {"Type": "Outerwear", "Subtype": "No", "Color": "No", "Pattern": "No", "Occasion": "No", "Temperature": "No", "Body": "No"},
@@ -52,10 +52,10 @@ var outerwear = [
     {"Type": "Outerwear", "Subtype": "Jacket", "Color": "Grey", "Pattern": "Waterproof", "Occasion": "3", "Temperature": "6", "Body": "2"},
     {"Type": "Outerwear", "Subtype": "Jacket", "Color": "Grey", "Pattern": "Fleece", "Occasion": "3", "Temperature": "4", "Body": "2"},
     {"Type": "Outerwear", "Subtype": "Jacket", "Color": "Grey", "Pattern": "Ski", "Occasion": "3", "Temperature": "6", "Body": "2"},
-    {"Type": "Outerwear", "Subtype": "Vest", "Color": "Grey", "Pattern": "Down", "Occasion": "3", "Temperature": "5", "Body": "2"},
+    {"Type": "Outerwear", "Subtype": "Vest", "Color": "Grey", "Pattern": "Down", "Occasion": "3", "Temperature": "5", "Body": "2"}
 ];
 var sweaters = [
-    {"Type": "sweater", "Subtype": "No", "Color": "No", "Pattern": "No", "Occasion": "No", "Temperature": "No", "Body": "No"},
+    {"Type": "Sweater", "Subtype": "No", "Color": "No", "Pattern": "No", "Occasion": "No", "Temperature": "No", "Body": "No"},
     {"Type": "Sweater", "Subtype": "Heavy", "Color": "Black", "Pattern": "Yes", "Occasion": "3", "Temperature": "4", "Body": "2"},
     {"Type": "Sweater", "Subtype": "Heavy", "Color": "Dark Green", "Pattern": "No", "Occasion": "3", "Temperature": "4", "Body": "2"},
     {"Type": "Sweater", "Subtype": "Heavy", "Color": "Grey", "Pattern": "No", "Occasion": "4", "Temperature": "3", "Body": "2"},
@@ -67,7 +67,7 @@ var sweaters = [
     {"Type": "Sweater", "Subtype": "Medium", "Color": "Blue", "Pattern": "Yes", "Occasion": "2", "Temperature": "4", "Body": "2"},
     {"Type": "Sweater", "Subtype": "Light", "Color": "Yellow", "Pattern": "No", "Occasion": "4", "Temperature": "3", "Body": "2"},
     {"Type": "Sweater", "Subtype": "Light", "Color": "Orange", "Pattern": "No", "Occasion": "3", "Temperature": "3", "Body": "2"},
-    {"Type": "Sweater", "Subtype": "Medium", "Color": "Dark Blue", "Pattern": "No", "Occasion": "3", "Temperature": "3", "Body": "2"},
+    {"Type": "Sweater", "Subtype": "Medium", "Color": "Dark Blue", "Pattern": "No", "Occasion": "3", "Temperature": "3", "Body": "2"}
 ];
 var pants = [
     {"Type": "Pants", "Subtype": "Jeans", "Color": "Silver", "Pattern": "No", "Occasion": "3", "Temperature": "2", "Body": "3"},
@@ -77,7 +77,7 @@ var pants = [
     {"Type": "Pants", "Subtype": "Jeans", "Color": "Blue", "Pattern": "No", "Occasion": "3", "Temperature": "2", "Body": "3"},
     {"Type": "Pants", "Subtype": "Shorts", "Color": "Navy", "Pattern": "No", "Occasion": "3", "Temperature": "2", "Body": "3"},
     {"Type": "Pants", "Subtype": "Shorts", "Color": "White", "Pattern": "Plaid", "Occasion": "3", "Temperature": "2", "Body": "3"},
-    {"Type": "Pants", "Subtype": "Shorts", "Color": "Grey", "Pattern": "No", "Occasion": "3", "Temperature": "2", "Body": "3"},
+    {"Type": "Pants", "Subtype": "Shorts", "Color": "Grey", "Pattern": "No", "Occasion": "3", "Temperature": "2", "Body": "3"}
 ];
 var shoes = [
     {"Type": "Shoes", "Subtype": "Dress", "Color": "Black", "Pattern": "No", "Occasion": "5", "Temperature": "1", "Body": "4"},
@@ -85,7 +85,7 @@ var shoes = [
     {"Type": "Shoes", "Subtype": "Chuckas", "Color": "Grey", "Pattern": "Raw Leather", "Occasion": "3", "Temperature": "1", "Body": "4"},
     {"Type": "Shoes", "Subtype": "Boots", "Color": "Brown", "Pattern": "Leather", "Occasion": "3", "Temperature": "4", "Body": "4"},
     {"Type": "Shoes", "Subtype": "Athletic", "Color": "Black", "Pattern": "Yes", "Occasion": "1", "Temperature": "1", "Body": "4"},
-    {"Type": "Shoes", "Subtype": "Skate", "Color": "Red", "Pattern": "Canvas", "Occasion": "2", "Temperature": "1", "Body": "4"},
+    {"Type": "Shoes", "Subtype": "Skate", "Color": "Red", "Pattern": "Canvas", "Occasion": "2", "Temperature": "1", "Body": "4"}
 ];    
     
 var UserCloset = {
