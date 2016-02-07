@@ -125,14 +125,38 @@ function guess(o, occasion, temp) {
             if(count > target && searching) {
                 searching = false;
                 outfit[p] = o[p][i];
-                //console.log(o[p][i]);
+                console.log(o[p][i]);
             }
         }
     }
     
     
    // console.log(outfit);
+    var outfit = JSON.parse("{" + printSrc(outfit.outerwear) + printSrc(outfit.sweater) + printSrc(outfit.shirts) + printSrc(outfit.pants) + printSrc(outfit.shoes) + '"0": "0"}');
+    console.log(outfit);
 }
+var printSrc = function(o){
+    var str='';
+
+    for(var p in o){
+        if(typeof o[p] == 'string'){
+            str+= '"' + srcKey[o["Type"]] + p + '"' + ': ' + '"'  + o[p] + '"' +',';
+        }else{
+            str+= p + ': { </br>' + print(o[p]) + '}';
+        }
+    }
+
+    return str;
+}
+
+var srcKey = {
+    "Outerwear": "1_",
+    "Sweater": "2_",
+    "Shirt": "3_",
+    "Pants": "4_",
+    "Shoes": "5_"
+}
+
 
 guess(UserCloset, 3, 3);
 
