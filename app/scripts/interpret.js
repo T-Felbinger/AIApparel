@@ -1,7 +1,7 @@
 //var net = require('net');
 function request() {
     xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET","http://127.0.0.1:8000/?Occasion=" + ($("paper-menu#occasion").prop("selected") + 1) + "&Temperature=3", true);
+    xmlhttp.open("GET","http://127.0.0.1:8000/?Occasion=" + ($("paper-menu#occasion").prop("selected") + 1) + "&Temperature=" + ($(".weather").html()), true);
     xmlhttp.onreadystatechange=function(){
          if (xmlhttp.readyState==4 && xmlhttp.status==200){
            console.log("response: " + xmlhttp.response);
