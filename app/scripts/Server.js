@@ -139,8 +139,31 @@ function guess(o, occasion, temp) {
             }
         }
     }
-   return (outfit);
-};
+   
+    var outfit = JSON.parse("{" + printSrc(outfit.outerwear) + printSrc(outfit.sweater) + printSrc(outfit.shirts) + printSrc(outfit.pants) +  printSrc(outfit.shoes) + '"0": "0"}');
+   return(outfit);
+}
+var printSrc = function(o){
+   var str='';
+
+   for(var p in o){
+       if(typeof o[p] == 'string'){
+           str+= '"' + srcKey[o["Type"]] + p + '"' + ': ' + '"'  + o[p] + '"' +',';
+       }else{
+           str+= p + ': { </br>' + print(o[p]) + '}';
+       }
+   }
+
+   return str;
+}
+
+var srcKey = {
+   "Outerwear": "1_",
+   "Sweater": "2_",
+   "Shirt": "3_",
+   "Pants": "4_",
+   "Shoes": "5_"
+}
 
 var print = function(o){
    var str='';
