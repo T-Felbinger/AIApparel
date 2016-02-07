@@ -77,17 +77,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <paper-menu attr-for-selected="data-route" selected="[[route]]">
           <a data-route="home" href="{{baseUrl}}">
             <iron-icon icon="home"></iron-icon>
-            <span>Home</span>
+            <span>Outfit</span>
           </a>
 
           <a data-route="users" href="{{baseUrl}}users">
             <iron-icon icon="info"></iron-icon>
-            <span>Users</span>
+            <span>Closet</span>
           </a>
 
           <a data-route="contact" href="{{baseUrl}}contact">
             <iron-icon icon="mail"></iron-icon>
-            <span>Contact</span>
+            <span>About</span>
           </a>
         </paper-menu>
       </paper-scroll-header-panel>
@@ -120,31 +120,74 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <iron-pages attr-for-selected="data-route" selected="{{route}}">
             <section data-route="home">
               
+<!--Beginning of Card Stack-->
            <style is="custom-style">
               paper-card.white {
                 --paper-card-header-color: #fff;
               }
             </style>
-            <paper-card image="images/down-jacket.jpg" class="white" style="margin-bottom:8px;">
+            <paper-material  style="text-align:center; max-width:1000px;">
+                <paper-menu style="text-align:center;" >
+                    <paper-item>Athletic</paper-item>
+                    <paper-item>Casual</paper-item>
+                    <paper-item>Any</paper-item>
+                    <paper-item>Fancy</paper-item>
+                    <paper-item>Formal</paper-item>
+                </paper-menu>
+                <paper-button raised>
+                    Refresh
+                </paper-button>
+            </paper-material>
+
+            <!--Outerwear-->
+            <paper-card id="Outerwear" heading="Outerwear" image="images/down-jacket.jpg" class="Black" style="margin-bottom:8px;">
               <div class="card-actions">
-                <paper-icon-button icon="favorite"></paper-icon-button>
+                <p>Outerwear Specs:</p>
+                 <p id="Subtype">subtype</p>
+                  <p id="Color">color</p>
+                  <p id="Pattern">pattern</p>
               </div>
             </paper-card>
-           <paper-card image="images/sweater.jpg" class="white" style="margin-bottom:8px;">
+        <!--Sweater-->
+           <paper-card id="Sweater" heading="Sweater" image="images/sweater.jpg" class="Black" style="margin-bottom:8px;">
               <div class="card-actions">
-                <paper-icon-button icon="favorite"></paper-icon-button>
+                  <p>Sweater Specs:</p>
+                  <p id="Subtype">subtype</p>
+                  <p id="Color">color</p>
+                  <p id="Pattern">pattern</p>
               </div>
             </paper-card>
-                <paper-card image="images/down-jacket.jpg" class="white" style="margin-bottom:8px;">
+            <!--Shirt-->
+            <paper-card id="Shirt" heading="Shirt" image="images/maroon-button-down.jpg" class="Black" style="margin-bottom:8px;">
               <div class="card-actions">
-                <paper-icon-button icon="favorite"></paper-icon-button>
+                <p>Shirt Specs:</p>
+                <p id="Subtype">subtype</p>
+                  <p id="Color">color</p>
+                  <p id="Pattern">pattern</p>
               </div>
             </paper-card>
-            </div>
-            Different layout and conte
-              <paper-material elevation="1">
-                <p>This is another card.</p>
-              </paper-material>
+            <!--Pants-->
+            <paper-card id="Pants" heading="Pants" image="images/Khakis.jpg" class="Black" style="margin-bottom:8px;">
+              <div class="card-actions">
+                <p>Pants Specs:</p>
+                  <p id="Subtype">subtype</p>
+                  <p id="Color">color</p>
+                  <p id="Pattern">pattern</p>
+              </div>
+            </paper-card>
+            <!--Shoes-->
+            <paper-card id="Shoes" heading="Shoes" image="images/brown-leather-boots.jpg" class="Black" style="margin-bottom:8px;">
+              <div class="card-actions">
+                <p>Shoe Specs:</p>
+                  <p id="Subtype">subtype</p>
+                  <p id="Color">color</p>
+                  <p id="Pattern">pattern</p>
+              </div>
+            </paper-card>
+            
+<!--End of Card Stack-->
+            
+             
 
               <paper-material elevation="1">
                 <h1 id="license">License</h1>

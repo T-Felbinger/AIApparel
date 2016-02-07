@@ -1,0 +1,51 @@
+
+                            <!DOCTYPE html>
+            <html>
+                <head>
+                    <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
+                    <link rel="stylesheet" href="main.css">
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+                    <script type='text/javascript' src='app.js'></script>
+
+                </head>
+
+                <body>
+                                <div class="jumbotron">
+                                        <button onclick="getLocation()">Get my location.</button>
+                                            <p id="demo"></p>
+
+                                            <script>
+                                            var x = document.getElementById("demo");
+
+                                            function getLocation() {
+                                                if (navigator.geolocation) {
+                                                    navigator.geolocation.getCurrentPosition(showPosition);
+                                                } else { 
+                                                    x.innerHTML = "Geolocation is not supported by this browser.";
+                                                }
+                                            }
+
+                                            function showPosition(position) {
+                                                x.innerHTML = "Latitude: " + position.coords.latitude + 
+                                                "<br>Longitude: " + position.coords.longitude;  
+                                            }
+                                            </script>
+
+                                        <p>The weather outside is: </p>
+
+                                        <div class= "weather">
+                                        Oops.. there is no temperature available for your location right now.
+                                        </div>
+
+                                </div>         
+                                
+                            <script>
+                                 $(document).ready(function(){
+                                     $.getJSON( "http://api.openweathermap.org/data/2.5/weather?q=Eindhoven&appid=9334f947893792dcb9b2e2c05ae23eb0", function( data ) {
+                                         $('.weather').html(Math.round(data.main.temp-273)+ ' degrees Celcius');
+                                     });
+
+                                 });
+                            </script>
+                </body>
+            </html>
