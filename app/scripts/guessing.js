@@ -125,13 +125,13 @@ function guess(o, occasion, temp) {
             if(count > target && searching) {
                 searching = false;
                 outfit[p] = o[p][i];
-                console.log(o[p][i]);
+                //console.log(o[p][i]);
             }
         }
     }
     
     
-    console.log(outfit);
+   // console.log(outfit);
 }
 
 guess(UserCloset, 3, 3);
