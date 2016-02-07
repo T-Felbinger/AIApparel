@@ -1,21 +1,29 @@
-//var http = require('http');
+//var net = require('net');
 function request() {
     xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET","127.0.0.1:8000/?Occasion=" + ($("paper-menu#occasion").prop("selected") + 1) + "&temp=3", true);
+    xmlhttp.open("GET","http://127.0.0.1:8000/?Occasion=" + ($("paper-menu#occasion").prop("selected") + 1) + "&Temperature=3", true);
     xmlhttp.onreadystatechange=function(){
          if (xmlhttp.readyState==4 && xmlhttp.status==200){
-           string=xmlhttp.responseText;
+           console.log("Test1: " + xmlhttp.responseText)
+           update(xmlhttp.responseText);
          }
    }
    xmlhttp.send();
 }
-
+//var client = new net.Socket();
+//client.connect(8000, '127.0.0.1', function() {
+//    console.log('Connected');
+//    client.write("Hello, server!");
+//});
 
 
 
 function refresh() {
-    
-    var outfit = JSON.parse(request());
+    request();
+}
+
+function update(responseText) {
+    var outfit = JSON.parse(responseText);
     
     $("#Outerwear #Subtype").html("outfit.1_Subtype");
     $("#Outerwear #Color").html("outfit.1_Color");
@@ -37,5 +45,4 @@ function refresh() {
     $("#Shoes #Color").html("outfit.5_Color");
     $("#Shoes #Pattern").html("outfit.5_Pattern");
     
-}
-interpret("a");
+};

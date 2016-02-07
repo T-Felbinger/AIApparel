@@ -8,7 +8,6 @@ var server = http.createServer(function (request, response) { //here, createServ
     var user_data = {};
     
     response.writeHead(200, {"Content-Type": "text/plain"});
-    response.write("Hello World");
     console.log("Hello World!");
     
     //start copied in guessing.js - couldn't get exports to work quickly
@@ -465,11 +464,29 @@ var class_name = "accepted";
 
 var features = ["1_Type", "1_Subtype", "1_Color", "1_Pattern", "1_Occasion", "1_Temperature", "1_Body", "2_Type", "2_Subtype", "2_Color", "2_Pattern", "2_Occasion", "2_Temperature", "2_Body", "3_Type", "3_Subtype", "3_Color", "3_Pattern", "3_Occasion", "3_Temperature", "3_Body", "4_Type", "4_Subtype", "4_Color", "4_Pattern", "4_Occasion", "4_Temperature", "4_Body", "5_Type", "5_Subtype", "5_Color", "5_Pattern", "5_Occasion", "5_Temperature", "5_Body"];
 
+var printSrc2 = function(o){
+   var str='{';
+
+   for(var p in o){
+       if(typeof o[p] == 'string'){
+           str+= '"' + p + '"' + ': "' + o[p]+'",';
+       }else{
+           str+= p + ': { </br>' + print(o[p]) + '}';
+       }
+   }
+    str += '"0":"0"}'
+
+   return str;
+};
+
+    
+
 var dt = new DecisionTree(training_data, class_name, features);
   
     //end copied in tree.js
     //start calculations
-    
+var run=true;
+while(run==true){
     if (queryData.Occasion && queryData.Temperature) {
         user_data.Occasion = queryData.Occasion;
         user_data.Temperature = queryData.Temperature;
@@ -480,7 +497,13 @@ var dt = new DecisionTree(training_data, class_name, features);
         
         var predicted_class = dt.predict(prediction);
         console.log("Pred_class ----> " + predicted_class)
+        if(predicted_class==true){
+            run=false;
+            response.write(printSrc2(prediction));
+        }
     };
+};  
+    
     
 
     
