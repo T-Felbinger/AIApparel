@@ -1,6 +1,7 @@
+//var http = require('http');
 function request() {
     xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET","localhost:8000/?Occasion=" + ($("paper-menu#occasion").prop("selected") + 1) + "&temp=3", true);
+    xmlhttp.open("GET","127.0.0.1:8000/?Occasion=" + ($("paper-menu#occasion").prop("selected") + 1) + "&temp=3", true);
     xmlhttp.onreadystatechange=function(){
          if (xmlhttp.readyState==4 && xmlhttp.status==200){
            string=xmlhttp.responseText;
@@ -8,6 +9,8 @@ function request() {
    }
    xmlhttp.send();
 }
+
+
 
 
 function refresh() {
