@@ -64,6 +64,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <script src="scripts/Server.js"></script>
     
     <script>
+        
         $(document).ready(function(){
             $.getJSON( "http://api.openweathermap.org/data/2.5/weather?q=Eindhoven&appid=9334f947893792dcb9b2e2c05ae23eb0", function( data ) {
                 $('.weather').html((Math.round(data.main.temp-273)* 9 / 5 + 32)+ ' degrees Fahrenheit');
